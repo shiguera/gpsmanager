@@ -1,0 +1,17 @@
+/**
+ * Proporciona gestión del GPS del dispositivo. <p>
+ * Mantiene una lista de GpsListenerer que reciben notificación de las 
+ * nuevas posiciones leidas del GPS a través del método 
+ * 'updateLocation()' del interface GpsListenerer.<p>
+ * Para añadir un GpsListenerer a la lista de escuchantes del GpsManager
+ * se utiliza el método 'registerGpsListenerer()'. También se dispone de un
+ * método 'unregisterGpsListenerer()'.<p>
+ * Para utilizar el GpsManager hay que instanciarle a través del constructor
+ * de la clase, que recibe como parámetro el Context de la Activity que le instancia.<p>
+ * Una vez instanciado hay que comprobar con el método 'isGpsEnabled()' que el GPS se ha activado 
+ * correctamente.<p>
+ * Para iniciar las actualizaciones hay que llamar al  método '<em>startGpsUpdates()</em>'<p>
+ * Para detener las actualizaciones se utiliza el método <em>'stopGpsUpdates()'</em>
+ * @author shiguera
+ *
+ */
