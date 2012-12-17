@@ -1,4 +1,5 @@
 /**
+ * GpsManager: Clase Android
  * Proporciona gestión del GPS del dispositivo. <p>
  * Mantiene una lista de GpsListenerer que reciben notificación de las 
  * nuevas posiciones leidas del GPS a través del método 
