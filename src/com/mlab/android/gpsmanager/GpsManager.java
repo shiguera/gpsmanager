@@ -36,6 +36,8 @@ import android.util.Log;
 public class GpsManager {
 
 	// FIXME trabajar en un thread secundario
+	// FIXME Habilitar la coarse-location
+	
 	private Context context;
 	/**
 	 * Lista de listeners del GpsManager
@@ -204,7 +206,7 @@ public class GpsManager {
 				break;
 			case(GpsStatus.GPS_EVENT_FIRST_FIX):
 				text="GPS_EVENT_FIRST_FIX";
-				GpsManager.this.gpsEventFirstFix=true;
+				firstFixEvent();				
 				break;
 			}
 			//Log.d("HAL", "GpsManager.onGpsStatusChanged(): "+text);
@@ -245,6 +247,12 @@ public class GpsManager {
         }
     	// Actualizar numero de puntos leidos
     	numpuntos++;
+	}
+	private void firstFixEvent() {
+		this.gpsEventFirstFix=true;
+		for(int i=0; i<this.gpsListeners.size(); i++) {
+        	this.gpsListeners.get(i).firstFixEvent();
+        }
 	}
 	
 	/**
